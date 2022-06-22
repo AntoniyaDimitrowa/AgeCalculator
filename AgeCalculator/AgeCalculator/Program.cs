@@ -30,6 +30,27 @@ namespace AgeCalculator
             }
             else { daysInFebruary = 28; }
             int[] daysInMonth = new int[12] { 31, daysInFebruary, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+
+            if (month < todaysMonth)
+            {
+                kidsYears = todaysYear - year;
+                if (day < todaysDay)
+                {
+                    kidsMonths = todaysMonth - month;
+                    kidsDays = todaysDay - day;
+                }
+                else if (day == todaysDay)
+                {
+                    kidsMonths = todaysMonth - month;
+                    kidsDays = 0;
+                }
+                else
+                {
+                    kidsMonths = todaysMonth - month - 1;
+                    kidsDays = (daysInMonth[todaysMonth - 2] - day) + todaysDay;
+                }
+
+            }
         }
     }
 }
