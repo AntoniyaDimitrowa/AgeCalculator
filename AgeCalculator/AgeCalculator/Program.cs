@@ -49,6 +49,27 @@ namespace AgeCalculator
                     kidsMonths = todaysMonth - month - 1;
                     kidsDays = (daysInMonth[todaysMonth - 2] - day) + todaysDay;
                 }
+            }
+            else if (month == todaysMonth)
+            {
+                if (day < todaysDay)
+                {
+                    kidsYears = todaysYear - year;
+                    kidsMonths = 0;
+                    kidsDays = todaysDay - day;
+                }
+                else if (day == todaysDay)
+                {
+                    kidsYears = todaysYear - year;
+                    kidsMonths = 0;
+                    kidsDays = 0;
+                }
+                else
+                {
+                    kidsYears = todaysYear - year - 1;
+                    kidsMonths = 11;
+                    kidsDays = (daysInMonth[todaysMonth - 2] - day) + todaysDay;
+                }
 
             }
         }
