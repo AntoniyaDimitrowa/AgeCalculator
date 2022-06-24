@@ -70,8 +70,31 @@ namespace AgeCalculator
                     kidsMonths = 11;
                     kidsDays = (daysInMonth[todaysMonth - 2] - day) + todaysDay;
                 }
-
             }
+            else
+            {
+                if (day < todaysDay)
+                {
+                    kidsYears = todaysYear - year - 1;
+                    kidsMonths = 12 - (month - todaysMonth);
+                    kidsDays = todaysDay - day;
+                }
+                else if (day == todaysDay)
+                {
+                    kidsYears = todaysYear - year - 1;
+                    kidsMonths = 12 - (month - todaysMonth);
+                    kidsDays = 0;
+                }
+                else
+                {
+                    kidsYears = todaysYear - year - 1;
+                    kidsMonths = 12 - (month - todaysMonth + 1);
+                    kidsDays = (daysInMonth[todaysMonth - 2] - day) + todaysDay;
+                }
+            }
+            Console.WriteLine($"Years: {kidsYears}");
+            Console.WriteLine($"Months: {kidsMonths}");
+            Console.WriteLine($"Days: {kidsDays}");
         }
     }
 }

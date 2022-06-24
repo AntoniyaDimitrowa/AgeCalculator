@@ -1,0 +1,16 @@
+D:\AgeCalculator\AgeCalculator\AgeCalculator\AgeCalculator\bin\Debug\net5.0\AgeCalculator.exe
+D:\AgeCalculator\AgeCalculator\AgeCalculator\AgeCalculator\bin\Debug\net5.0\AgeCalculator.deps.json
+D:\AgeCalculator\AgeCalculator\AgeCalculator\AgeCalculator\bin\Debug\net5.0\AgeCalculator.runtimeconfig.json
+D:\AgeCalculator\AgeCalculator\AgeCalculator\AgeCalculator\bin\Debug\net5.0\AgeCalculator.runtimeconfig.dev.json
+D:\AgeCalculator\AgeCalculator\AgeCalculator\AgeCalculator\bin\Debug\net5.0\AgeCalculator.dll
+D:\AgeCalculator\AgeCalculator\AgeCalculator\AgeCalculator\bin\Debug\net5.0\AgeCalculator.pdb
+D:\AgeCalculator\AgeCalculator\AgeCalculator\AgeCalculator\obj\Debug\net5.0\AgeCalculator.csproj.AssemblyReference.cache
+D:\AgeCalculator\AgeCalculator\AgeCalculator\AgeCalculator\obj\Debug\net5.0\AgeCalculator.GeneratedMSBuildEditorConfig.editorconfig
+D:\AgeCalculator\AgeCalculator\AgeCalculator\AgeCalculator\obj\Debug\net5.0\AgeCalculator.AssemblyInfoInputs.cache
+D:\AgeCalculator\AgeCalculator\AgeCalculator\AgeCalculator\obj\Debug\net5.0\AgeCalculator.AssemblyInfo.cs
+D:\AgeCalculator\AgeCalculator\AgeCalculator\AgeCalculator\obj\Debug\net5.0\AgeCalculator.csproj.CoreCompileInputs.cache
+D:\AgeCalculator\AgeCalculator\AgeCalculator\AgeCalculator\obj\Debug\net5.0\AgeCalculator.dll
+D:\AgeCalculator\AgeCalculator\AgeCalculator\AgeCalculator\obj\Debug\net5.0\refint\AgeCalculator.dll
+D:\AgeCalculator\AgeCalculator\AgeCalculator\AgeCalculator\obj\Debug\net5.0\AgeCalculator.pdb
+D:\AgeCalculator\AgeCalculator\AgeCalculator\AgeCalculator\obj\Debug\net5.0\AgeCalculator.genruntimeconfig.cache
+D:\AgeCalculator\AgeCalculator\AgeCalculator\AgeCalculator\obj\Debug\net5.0\ref\AgeCalculator.dll
