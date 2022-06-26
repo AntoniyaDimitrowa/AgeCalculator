@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace AgeCalculator
 {
@@ -6,12 +7,12 @@ namespace AgeCalculator
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Input year of birth: ");
-            int year = int.Parse(Console.ReadLine());
-            Console.WriteLine("Input month of birth(1,2...12): ");
-            int month = int.Parse(Console.ReadLine());
-            Console.WriteLine("Input day of birth: ");
-            int day = int.Parse(Console.ReadLine());
+            
+            Console.WriteLine("Input date of birth(05.06.2005): ");
+            int[] date =Console.ReadLine().Split('.').Select(int.Parse).ToArray();
+            int day = date[0];
+            int month = date[1];
+            int year = date[2];
 
             DateTime now = DateTime.Now;
 
@@ -92,9 +93,11 @@ namespace AgeCalculator
                     kidsDays = (daysInMonth[todaysMonth - 2] - day) + todaysDay;
                 }
             }
-            Console.WriteLine($"Years: {kidsYears}");
-            Console.WriteLine($"Months: {kidsMonths}");
-            Console.WriteLine($"Days: {kidsDays}");
+            Console.WriteLine();
+            Console.WriteLine($"Today's date: {todaysDay:d2}.{todaysMonth:d2}.{todaysYear}");
+            Console.WriteLine($"Date of birth: {day:d2}.{month:d2}.{year}");
+            Console.WriteLine();
+            Console.WriteLine($"Today this kid is {kidsYears} years {kidsMonths} months and {kidsDays} days old.");
         }
     }
 }
