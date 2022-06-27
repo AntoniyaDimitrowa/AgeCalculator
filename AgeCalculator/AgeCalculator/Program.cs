@@ -8,7 +8,8 @@ namespace AgeCalculator
         static void Main(string[] args)
         {
             Console.WriteLine("Please select a language! Input \"BG\" for bulgarian or \"ENG\" for english.");
-            string language = Console.ReadLine();
+            Console.WriteLine("Моля изберете език! Въведете \"BG\" за български или \"ENG\" за английски.");
+            string language = Console.ReadLine().ToUpper();
             if(language == "BG")
             {
                 Console.WriteLine("Въведете дата на раждане(05.06.2005): ");
@@ -29,9 +30,9 @@ namespace AgeCalculator
             int todaysDay = now.Day;
             int todaysMonth = now.Month;
 
-            int kidsYears = 0;
-            int kidsMonths = 0;
-            int kidsDays = 0;
+            int childsYears = 0;
+            int childsMonths = 0;
+            int childsDays = 0;
 
             int daysInFebruary;
             if (year % 4 == 0)
@@ -43,63 +44,63 @@ namespace AgeCalculator
 
             if (month < todaysMonth)
             {
-                kidsYears = todaysYear - year;
+                childsYears = todaysYear - year;
                 if (day < todaysDay)
                 {
-                    kidsMonths = todaysMonth - month;
-                    kidsDays = todaysDay - day;
+                    childsMonths = todaysMonth - month;
+                    childsDays = todaysDay - day;
                 }
                 else if (day == todaysDay)
                 {
-                    kidsMonths = todaysMonth - month;
-                    kidsDays = 0;
+                    childsMonths = todaysMonth - month;
+                    childsDays = 0;
                 }
                 else
                 {
-                    kidsMonths = todaysMonth - month - 1;
-                    kidsDays = (daysInMonth[todaysMonth - 2] - day) + todaysDay;
+                    childsMonths = todaysMonth - month - 1;
+                    childsDays = (daysInMonth[todaysMonth - 2] - day) + todaysDay;
                 }
             }
             else if (month == todaysMonth)
             {
                 if (day < todaysDay)
                 {
-                    kidsYears = todaysYear - year;
-                    kidsMonths = 0;
-                    kidsDays = todaysDay - day;
+                    childsYears = todaysYear - year;
+                    childsMonths = 0;
+                    childsDays = todaysDay - day;
                 }
                 else if (day == todaysDay)
                 {
-                    kidsYears = todaysYear - year;
-                    kidsMonths = 0;
-                    kidsDays = 0;
+                    childsYears = todaysYear - year;
+                    childsMonths = 0;
+                    childsDays = 0;
                 }
                 else
                 {
-                    kidsYears = todaysYear - year - 1;
-                    kidsMonths = 11;
-                    kidsDays = (daysInMonth[todaysMonth - 2] - day) + todaysDay;
+                    childsYears = todaysYear - year - 1;
+                    childsMonths = 11;
+                    childsDays = (daysInMonth[todaysMonth - 2] - day) + todaysDay;
                 }
             }
             else
             {
                 if (day < todaysDay)
                 {
-                    kidsYears = todaysYear - year - 1;
-                    kidsMonths = 12 - (month - todaysMonth);
-                    kidsDays = todaysDay - day;
+                    childsYears = todaysYear - year - 1;
+                    childsMonths = 12 - (month - todaysMonth);
+                    childsDays = todaysDay - day;
                 }
                 else if (day == todaysDay)
                 {
-                    kidsYears = todaysYear - year - 1;
-                    kidsMonths = 12 - (month - todaysMonth);
-                    kidsDays = 0;
+                    childsYears = todaysYear - year - 1;
+                    childsMonths = 12 - (month - todaysMonth);
+                    childsDays = 0;
                 }
                 else
                 {
-                    kidsYears = todaysYear - year - 1;
-                    kidsMonths = 12 - (month - todaysMonth + 1);
-                    kidsDays = (daysInMonth[todaysMonth - 2] - day) + todaysDay;
+                    childsYears = todaysYear - year - 1;
+                    childsMonths = 12 - (month - todaysMonth + 1);
+                    childsDays = (daysInMonth[todaysMonth - 2] - day) + todaysDay;
                 }
             }
             if (language == "BG")
@@ -108,7 +109,39 @@ namespace AgeCalculator
                 Console.WriteLine($"Днешна дата: {todaysDay:d2}.{todaysMonth:d2}.{todaysYear}");
                 Console.WriteLine($"Дата на раждане: {day:d2}.{month:d2}.{year}");
                 Console.WriteLine();
-                Console.WriteLine($"Днес това дете е на {kidsYears} години {kidsMonths} месеца и {kidsDays} дни.");
+                if (childsYears == 0 && childsMonths == 0 && childsDays == 0)
+                {
+                    Console.WriteLine($"Това дете е новородено.");
+                }
+                else if (childsYears == 0 && childsMonths == 0 && childsDays != 0)
+                {
+                    Console.WriteLine($"Днес това дете е на {childsDays} дни.");
+                }
+                else if (childsYears == 0 && childsMonths != 0 && childsDays == 0)
+                {
+                    Console.WriteLine($"Днес това дете е на {childsMonths} месеца.");
+                }
+                else if (childsYears != 0 && childsMonths == 0 && childsDays == 0)
+                {
+                    Console.WriteLine($"Честит рожден ден! Днес детето навършва {childsYears} години.");
+                }
+                else if (childsYears == 0 && childsMonths != 0 && childsDays != 0)
+                {
+                    Console.WriteLine($"Днес това дете е на {childsMonths} месеца и {childsDays} дни.");
+                }
+                else if (childsYears != 0 && childsMonths == 0 && childsDays != 0)
+                {
+                    Console.WriteLine($"Днес това дете е на {childsYears} години и {childsDays} дни.");
+                }
+                else if (childsYears != 0 && childsMonths != 0 && childsDays == 0)
+                {
+                    Console.WriteLine($"Днес това дете е на {childsYears} години и {childsMonths} месеца.");
+                }
+                else 
+                {
+                    Console.WriteLine($"Днес това дете е на {childsYears} години, {childsMonths} месеца и {childsDays} дни.");
+                }
+                
             }
             else if (language == "ENG")
             {
@@ -116,7 +149,39 @@ namespace AgeCalculator
                 Console.WriteLine($"Today's date: {todaysDay:d2}.{todaysMonth:d2}.{todaysYear}");
                 Console.WriteLine($"Date of birth: {day:d2}.{month:d2}.{year}");
                 Console.WriteLine();
-                Console.WriteLine($"Today this kid is {kidsYears} years {kidsMonths} months and {kidsDays} days old.");
+                if (childsYears == 0 && childsMonths == 0 && childsDays == 0)
+                {
+                    Console.WriteLine($"This child is a newborn.");
+                }
+                else if (childsYears == 0 && childsMonths == 0 && childsDays != 0)
+                {
+                    Console.WriteLine($"Today this child is {childsDays} days old.");
+                }
+                else if (childsYears == 0 && childsMonths != 0 && childsDays == 0)
+                {
+                    Console.WriteLine($"Today this child is {childsMonths} months old.");
+                }
+                else if (childsYears != 0 && childsMonths == 0 && childsDays == 0)
+                {
+                    Console.WriteLine($"Happy Birthday! Today this child is {childsYears} years old.");
+                }
+                else if (childsYears == 0 && childsMonths != 0 && childsDays != 0)
+                {
+                    Console.WriteLine($"Today this child is {childsMonths} months and {childsDays} days old.");
+                }
+                else if (childsYears != 0 && childsMonths == 0 && childsDays != 0)
+                {
+                    Console.WriteLine($"Today this child is {childsYears} years and {childsDays} days old.");
+                }
+                else if (childsYears != 0 && childsMonths != 0 && childsDays == 0)
+                {
+                    Console.WriteLine($"Today this child is {childsYears} years and {childsMonths} months old.");
+                }
+                else
+                {
+                    Console.WriteLine($"Today this child is {childsYears} years, {childsMonths} months and {childsDays} days old.");
+                }
+                
             }
         }
     }
