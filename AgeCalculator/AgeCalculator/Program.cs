@@ -7,8 +7,17 @@ namespace AgeCalculator
     {
         static void Main(string[] args)
         {
-            
-            Console.WriteLine("Input date of birth(05.06.2005): ");
+            Console.WriteLine("Please select a language! Input \"BG\" for bulgarian or \"ENG\" for english.");
+            string language = Console.ReadLine();
+            if(language == "BG")
+            {
+                Console.WriteLine("Въведете дата на раждане(05.06.2005): ");
+            }
+            else if(language == "ENG")
+            {
+                Console.WriteLine("Input date of birth(05.06.2005): ");
+            }
+          
             int[] date =Console.ReadLine().Split('.').Select(int.Parse).ToArray();
             int day = date[0];
             int month = date[1];
@@ -93,11 +102,22 @@ namespace AgeCalculator
                     kidsDays = (daysInMonth[todaysMonth - 2] - day) + todaysDay;
                 }
             }
-            Console.WriteLine();
-            Console.WriteLine($"Today's date: {todaysDay:d2}.{todaysMonth:d2}.{todaysYear}");
-            Console.WriteLine($"Date of birth: {day:d2}.{month:d2}.{year}");
-            Console.WriteLine();
-            Console.WriteLine($"Today this kid is {kidsYears} years {kidsMonths} months and {kidsDays} days old.");
+            if (language == "BG")
+            {
+                Console.WriteLine();
+                Console.WriteLine($"Днешна дата: {todaysDay:d2}.{todaysMonth:d2}.{todaysYear}");
+                Console.WriteLine($"Дата на раждане: {day:d2}.{month:d2}.{year}");
+                Console.WriteLine();
+                Console.WriteLine($"Днес това дете е на {kidsYears} години {kidsMonths} месеца и {kidsDays} дни.");
+            }
+            else if (language == "ENG")
+            {
+                Console.WriteLine();
+                Console.WriteLine($"Today's date: {todaysDay:d2}.{todaysMonth:d2}.{todaysYear}");
+                Console.WriteLine($"Date of birth: {day:d2}.{month:d2}.{year}");
+                Console.WriteLine();
+                Console.WriteLine($"Today this kid is {kidsYears} years {kidsMonths} months and {kidsDays} days old.");
+            }
         }
     }
 }
